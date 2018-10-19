@@ -7,7 +7,7 @@ Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
-Summary: Basic functions for microbial sequence data analysis.
+Summary: Basic functions for microbial sequence data analysis. The idea is to use the basic R data structures as much as possible, without building complex data types.
 
 
 
