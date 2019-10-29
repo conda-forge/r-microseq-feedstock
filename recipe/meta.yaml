@@ -1,5 +1,4 @@
-{% set version = "1.2.3" %}
-
+{% set version = '1.3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,24 +7,23 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: microseq_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/microseq_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/microseq/microseq_{{ version }}.tar.gz
-  sha256: f7bf03ff2b13f07756db88c10a2b50efe1015f3c6fd23106e4b7ece007b5efb2
+  sha256: 36f254cb9fb7db0a6f79fc5c5089975fd0ea1b948cff17ea07f6f7ea457f73eb
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
@@ -35,10 +33,14 @@ requirements:
   host:
     - r-base
     - r-rcpp >=0.12.0
+    - r-stringr
+    - r-tibble
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-rcpp >=0.12.0
+    - r-stringr
+    - r-tibble
 
 test:
   commands:
@@ -51,10 +53,30 @@ about:
   summary: Basic functions for microbial sequence data analysis. The idea is to use the basic
     R data structures as much as possible, without building complex data types.
   license_family: GPL2
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
-   recipe-maintainers:
+  recipe-maintainers:
     - conda-forge/r
     - MathiasHaudgaard
     - FrodePedersen
     - ArneKr
+
+# Package: microseq
+# Type: Package
+# Title: Basic Biological Sequence Handling
+# Version: 1.3
+# Date: 2019-10-26
+# Author: Lars Snipen, Kristian Hovde Liland
+# Maintainer: Lars Snipen <lars.snipen@nmbu.no>
+# Description: Basic functions for microbial sequence data analysis. The idea is to use the basic R data structures as much as possible, without building complex data types.
+# License: GPL-2
+# Depends: R (>= 3.5.0), tibble, stringr
+# Imports: Rcpp (>= 0.12.0)
+# LinkingTo: Rcpp (>= 0.12.0)
+# RoxygenNote: 6.1.1
+# NeedsCompilation: yes
+# Packaged: 2019-10-27 11:47:58 UTC; larssn
+# Repository: CRAN
+# Date/Publication: 2019-10-27 12:20:02 UTC
