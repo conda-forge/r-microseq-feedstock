@@ -1,4 +1,4 @@
-{% set version = "2.0" %}
+{% set version = '2.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -33,12 +33,16 @@ requirements:
   host:
     - r-base
     - r-rcpp >=0.12.0
+    - r-dplyr
+    - r-rlang
     - r-stringr
     - r-tibble
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-rcpp >=0.12.0
+    - r-dplyr
+    - r-rlang
     - r-stringr
     - r-tibble
 
@@ -50,8 +54,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=microseq
   license: GPL-2
-  summary: Basic functions for microbial sequence data analysis. The idea is to use the basic
-    R data structures as much as possible, without building complex data types.
+  summary: Basic functions for microbial sequence data analysis. The idea is to use generic R
+    data structures as much as possible, making R data wrangling possible also for sequence
+    data.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
@@ -66,17 +71,17 @@ extra:
 # Package: microseq
 # Type: Package
 # Title: Basic Biological Sequence Handling
-# Version: 1.3
-# Date: 2019-10-26
+# Version: 2.0
+# Date: 2020-01-09
 # Author: Lars Snipen, Kristian Hovde Liland
 # Maintainer: Lars Snipen <lars.snipen@nmbu.no>
-# Description: Basic functions for microbial sequence data analysis. The idea is to use the basic R data structures as much as possible, without building complex data types.
+# Description: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.
 # License: GPL-2
-# Depends: R (>= 3.5.0), tibble, stringr
+# Depends: R (>= 3.5.0), tibble, stringr, dplyr, rlang
 # Imports: Rcpp (>= 0.12.0)
 # LinkingTo: Rcpp (>= 0.12.0)
-# RoxygenNote: 6.1.1
+# RoxygenNote: 7.0.2
 # NeedsCompilation: yes
-# Packaged: 2019-10-27 11:47:58 UTC; larssn
+# Packaged: 2020-01-09 08:12:45 UTC; larssn
 # Repository: CRAN
-# Date/Publication: 2019-10-27 12:20:02 UTC
+# Date/Publication: 2020-01-09 13:00:02 UTC
