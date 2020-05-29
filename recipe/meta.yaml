@@ -33,6 +33,7 @@ requirements:
   host:
     - r-base
     - r-rcpp >=0.12.0
+    - r-data.table
     - r-dplyr
     - r-rlang
     - r-stringr
@@ -41,6 +42,7 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcpp >=0.12.0
+    - r-data.table
     - r-dplyr
     - r-rlang
     - r-stringr
@@ -53,7 +55,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=microseq
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.
   license_family: GPL2
   license_file:
