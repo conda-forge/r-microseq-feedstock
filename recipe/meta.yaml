@@ -1,4 +1,4 @@
-{% set version = '2.0' %}
+{% set version = "2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/microseq_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/microseq/microseq_{{ version }}.tar.gz
-  sha256: 998754a045f1b334b5e4b23ac2de215507d96219b7b1f5c89fdf0d56f6e19dc4
+  sha256: 700cf07a6c3e34fe57f7b64335162d130bd610ed6d1f5d891b20f4cf664bdf74
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -54,12 +54,10 @@ test:
 about:
   home: https://CRAN.R-project.org/package=microseq
   license: GPL-2
-  summary: Basic functions for microbial sequence data analysis. The idea is to use generic R
-    data structures as much as possible, making R data wrangling possible also for sequence
-    data.
+  summary: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
