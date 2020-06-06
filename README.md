@@ -3,7 +3,7 @@ About r-microseq
 
 Home: https://CRAN.R-project.org/package=microseq
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: BSD 3-Clause
 
