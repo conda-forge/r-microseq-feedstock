@@ -1,4 +1,4 @@
-{% set version = "2.1.2" %}
+{% set version = "2.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/microseq_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/microseq/microseq_{{ version }}.tar.gz
-  sha256: 8fcdf92439de6ecc90a78f3fba42307c756f73f36f0a1ec66b58f7bb38dfba13
+  sha256: 7f394401759fc460a577893fcb5737e57425d7970e6ea1e5e0c2ea5fc9635cb2
 
 build:
   merge_build_host: true  # [win]
