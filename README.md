@@ -3,6 +3,7 @@ About r-microseq-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-microseq-feedstock/blob/main/LICENSE.txt)
 
+
 About r-microseq
 ----------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=microseq
 Package license: GPL-2.0-only
 
 Summary: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.
+
 About r-microseq
 ----------------
 
